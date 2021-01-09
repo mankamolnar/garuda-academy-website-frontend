@@ -1,0 +1,58 @@
+.bg-dark-transparent {
+  background-color: rgba(52, 58, 64, 0.9);
+}
+
+.garuda-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1031;
+}
+
+.modal-row {
+  height: 100%;
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.modal-card {
+  padding-bottom: 0px !important;
+  height: fit-content !important;
+}
+
+#garuda-modal-title {
+  width: 85%;
+}
+
+#modal-close-btn-container {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  height: 100%;
+}
+
+.modal-close-btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  float: right;
+}
+
+.modal-card .form-label {
+  font-weight: bold;
+}
+
+.modal-card .alert {
+  font-weight: bold;
+}
+
+.d-block.d-sm-none .btn {
+  width: 100%;
+}
