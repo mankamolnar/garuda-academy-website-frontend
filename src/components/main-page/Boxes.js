@@ -1,7 +1,6 @@
 import React from 'react';
 import routes from '../Routes';
 import { Link } from 'react-router-dom';
-import './main-page.css';
 
 export default class Boxes extends React.Component {
   render() {
