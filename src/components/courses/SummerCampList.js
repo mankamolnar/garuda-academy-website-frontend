@@ -9,6 +9,17 @@ import calendar from '../common/calendar.png';
 import './courses.css';
 
 export default class SummerCampList extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      playLeft: false
+    }
+  }
+
+  setLeftPlayer = () => {
+    this.setState({playLeft: true});
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -32,7 +43,11 @@ export default class SummerCampList extends React.Component {
                 Scratch tanfolyam (kezdő)
               </div>
               <div className={"card-body"}>
-                <iframe title={"Scratch tábor - 14. nap"} width="100%" height="200" src="https://www.youtube.com/embed/6fIkB2F8N38" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                {
+                  this.state.playLeft
+                    ? <iframe className="mb-3" title={"Scratch tábor - 14. nap"} width="100%" height="250" src="https://www.youtube.com/embed/6fIkB2F8N38?autoplay=1" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    : <div className="video-player-min mb-3" id={"list-video-scratch"} onClick={this.setLeftPlayer}></div>
+                }
                 <p>
                   <img src={timer} alt="Napi óraszám" className={'box_icon'} />
                   <span className={'description_title'}>Időtartam:</span> 2 hét, 10 alkalom, alkalmanként 4 óra
@@ -201,6 +216,10 @@ export default class SummerCampList extends React.Component {
                   <img src={price} alt="Napi óraszám" className={'box_icon'} />
                   <span className={'description_title'}>Ár:</span> 45 000 Ft
                 </p>
+                <p className="text-center text-danger font-weight-bold">
+                  2021-es táboraink véglegesítés alatt állnak!
+                  Az itt feltüntetett információk tájékoztató jellegűek!
+                </p>
                 <p className={"sign-up-button"}>
                   <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
@@ -247,6 +266,10 @@ export default class SummerCampList extends React.Component {
                   <img src={price} alt="Napi óraszám" className={'box_icon'} />
                   <span className={'description_title'}>Ár:</span> 19 000 Ft
                 </p>
+                <p className="text-center text-danger font-weight-bold">
+                  2021-es táboraink véglegesítés alatt állnak!
+                  Az itt feltüntetett információk tájékoztató jellegűek!
+                </p>
                 <p className={"sign-up-button"}>
                   <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
@@ -289,6 +312,10 @@ export default class SummerCampList extends React.Component {
                 <p>
                   <img src={price} alt="Napi óraszám" className={'box_icon'} />
                   <span className={'description_title'}>Ár:</span> 19 000 Ft
+                </p>
+                <p className="text-center text-danger font-weight-bold">
+                  2021-es táboraink véglegesítés alatt állnak!
+                  Az itt feltüntetett információk tájékoztató jellegűek!
                 </p>
                 <p className={"sign-up-button"}>
                   <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
