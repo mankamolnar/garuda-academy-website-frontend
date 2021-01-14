@@ -14,9 +14,9 @@
 }
 
 #video1 {
-  background-image: url('video-1.webp');
+  background-image: url('../common/images/video-thumbnails/video-1.webp');
 }
 
 #video2 {
-  background-image: url('video-2.webp');
+  background-image: url('../common/images/video-thumbnails/video-2.webp');
 }
