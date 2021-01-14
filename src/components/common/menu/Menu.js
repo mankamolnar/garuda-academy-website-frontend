@@ -43,7 +43,10 @@ export default class Menu extends React.Component {
           <div className={"collapse navbar-collapse " + this.state.menuAdditionalClassNames} id={"navigation-bar"}>
             <ul className={"navbar-nav mr-auto mt-2 mt-lg-0"}>
               <li className={"nav-item"}>
-                <Link to={routes.courses} className={'nav-link'}>Online képzéseink</Link>
+                <Link to={routes.childClubs} className={'nav-link'}>Gyerek szakkörök</Link>
+              </li>
+              <li className={"nav-item"}>
+                <Link to={routes.summerCamps} className={'nav-link'}>Nyári táborok</Link>
               </li>
               <li className={"nav-item"}>
                 <Link to={routes.privateLessons} className={'nav-link'}>Privát órák</Link>

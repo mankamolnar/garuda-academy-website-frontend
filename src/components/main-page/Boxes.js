@@ -55,7 +55,7 @@ export default class Boxes extends React.Component {
 
         <div className="row pb-3">
           <div className={"col-md-12 text-center"}>
-            <Link to={routes.courses} className={"btn btn-info btn-lg"}>Több info >></Link>
+            <Link to={routes.childClubs} className={"btn btn-info btn-lg"}>Több info &gt;&gt;</Link>
           </div>
         </div>
       </div>

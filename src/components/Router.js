@@ -6,7 +6,8 @@ import {
 } from 'react-router-dom';
 import MainPage from './main-page/MainPage';
 import Teachers from './teachers/Teachers';
-import Courses from './courses/Courses';
+import ChildClubs from './courses/ChildClubs';
+import SummerCamps from './courses/SummerCamps';
 import ContactUs from './contact-us/ContactUs';
 import PrivateLesson from './private-lesson/PrivateLesson';
 import c404 from './404/404';
@@ -20,7 +21,8 @@ function Router() {
       <ScrollToTop>
         <Switch>
           <Route path={routes.mainPage} component={MainPage} exact />
-          <Route path={routes.courses} component={Courses} />
+          <Route path={routes.childClubs} component={ChildClubs} />
+          <Route path={routes.summerCamps} component={SummerCamps} />
           <Route path={routes.teachers} component={Teachers} />
           <Route path={routes.privateLessons} component={PrivateLesson} />
           <Route path={routes.contacts} component={ContactUs} />

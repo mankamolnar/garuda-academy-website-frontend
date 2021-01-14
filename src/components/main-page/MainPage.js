@@ -20,7 +20,17 @@ export default class MainPage extends React.Component {
           </h2>
 
           <div className={"text-center"}>
-            <Link to={routes.courses} className={"btn btn-success btn-lg mt-4 mr-2 ml-2"}>Képzéseink</Link>
+            <div className="row">
+              <div className="col-sm-4">
+                <Link to={routes.childClubs} className={"btn btn-success btn-lg mt-4 mr-2 ml-2"}>Gyerek szakkörök</Link>
+              </div>
+              <div className="col-sm-4">
+                <Link to={routes.summerCamps} className={"btn btn-success btn-lg mt-4 mr-2 ml-2"}>Nyári táborok</Link>
+              </div>
+              <div className="col-sm-4">
+                <Link to={routes.privateLessons} className={"btn btn-success btn-lg mt-4 mr-2 ml-2"}>Privát órák</Link>
+              </div>
+            </div>
           </div>
         </Header>
         <Videos />

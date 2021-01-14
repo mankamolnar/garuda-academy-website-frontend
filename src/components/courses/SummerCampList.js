@@ -8,11 +8,11 @@ import price from '../common/price.png';
 import calendar from '../common/calendar.png';
 import './courses.css';
 
-export default class CoursesList extends React.Component {
+export default class SummerCampList extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className={"row mb-3"}>
+        <div className={"row"}>
           <div className={"col-md-12 text-center mt-3"} id="hot-clicks">
             <hr />
             <button className={"btn btn-info m-1"} onClick={() => document.getElementById("scratch-card").scrollIntoView()}>Scratch</button>
@@ -22,9 +22,10 @@ export default class CoursesList extends React.Component {
             <hr />
           </div>
         </div>
-        <div className={"row"}>
+
+        <div className={"row mt-3"}>
           <div className={"col-1"}></div>
-          <div className={"col-md-5"}>
+          <div className={"col-md-5 mb-3"}>
 
             <div className={"card"} id={"scratch-card"}>
               <div className={"card-header h5"}>
@@ -58,17 +59,21 @@ export default class CoursesList extends React.Component {
                 </p>
                 <p>
                   <img src={price} alt="Napi óraszám" className={'box_icon'} />
-                  <span className={'description_title'}>Ár:</span> 35 000 Ft (Június 30-i képzésünkre csak 25 000 Ft)
+                  <span className={'description_title'}>Ár:</span> 35 000 Ft
+                </p>
+                <p className="text-center text-danger font-weight-bold">
+                  2021-es táboraink véglegesítés alatt állnak!
+                  Az itt feltüntetett információk tájékoztató jellegűek!
                 </p>
                 <p className={"sign-up-button"}>
-                  <a href="https://forms.gle/A21bucdshRNa8vz46" className={"btn btn-success "} target="_blank" rel="noopener noreferrer">Jelentkezési lap</a>
+                  <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
               </div>
             </div>
 
           </div>
 
-          <div className={"col-md-5"}>
+          <div className={"col-md-5 mb-3"}>
 
             <div className={"card"} id={"python-card"}>
               <div className={"card-header h5"}>
@@ -103,8 +108,12 @@ export default class CoursesList extends React.Component {
                   <img src={price} alt="Napi óraszám" className={'box_icon'} />
                   <span className={'description_title'}>Ár:</span> 19 000 Ft
                 </p>
+                <p className="text-center text-danger font-weight-bold">
+                  2021-es táboraink véglegesítés alatt állnak!
+                  Az itt feltüntetett információk tájékoztató jellegűek!
+                </p>
                 <p className={"sign-up-button"}>
-                  <a className={"btn btn-success"} href={"https://forms.gle/2nCGuz3v1SPDsRXF9"} target="_blank" rel="noopener noreferrer">Jelentkezési lap</a>
+                  <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
               </div>
             </div>
@@ -113,9 +122,9 @@ export default class CoursesList extends React.Component {
           <div className={"col-1"}></div>
         </div>
 
-        <div className={"row mb-3"}>
+        <div className={"row"}>
           <div className={"col-1"}></div>
-          <div className={"col-md-5 mt-3"}>
+          <div className={"col-md-5 mb-3"}>
 
             <div className={"card"}>
               <div className={"card-header h5"}>
@@ -150,15 +159,19 @@ export default class CoursesList extends React.Component {
                   <img src={price} alt="Napi óraszám" className={'box_icon'} />
                   <span className={'description_title'}>Ár:</span> 19 000 Ft
                 </p>
+                <p className="text-center text-danger font-weight-bold">
+                  2021-es táboraink véglegesítés alatt állnak!
+                  Az itt feltüntetett információk tájékoztató jellegűek!
+                </p>
                 <p className={"sign-up-button"}>
-                  <a href="https://forms.gle/g9JfZU46cjWmRTWQ8" className={"btn btn-success"} target="_blank" rel="noopener noreferrer">Jelentkezési lap</a>
+                  <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
               </div>
             </div>
 
           </div>
 
-          <div className={"col-md-5 mt-3"}>
+          <div className={"col-md-5 mb-3"}>
             <div className={"card"}>
               <div className={"card-header h5"}>
                 Python + Python PRO + HTML kombinált csomag
@@ -189,7 +202,7 @@ export default class CoursesList extends React.Component {
                   <span className={'description_title'}>Ár:</span> 45 000 Ft
                 </p>
                 <p className={"sign-up-button"}>
-                  <a href="https://forms.gle/G5KXUqYtnY95asSa8" className={"btn btn-success"} target="_blank" rel="noopener noreferrer">Jelentkezési lap</a>
+                  <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
               </div>
             </div>
@@ -197,9 +210,9 @@ export default class CoursesList extends React.Component {
           <div className={"col-1"}></div>
         </div>
 
-        <div className={"row mb-3"}>
+        <div className={"row"}>
           <div className={"col-1"}></div>
-          <div className={"col-md-5 mt-3"}>
+          <div className={"col-md-5 mb-3"}>
 
             <div className={"card"} id="html-card">
               <div className={"card-header h5"}>
@@ -235,16 +248,16 @@ export default class CoursesList extends React.Component {
                   <span className={'description_title'}>Ár:</span> 19 000 Ft
                 </p>
                 <p className={"sign-up-button"}>
-                  <a href="https://forms.gle/YNELQpZrWohVLUZKA" className={"btn btn-success"} target="_blank" rel="noopener noreferrer">Jelentkezési lap</a>
+                  <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
               </div>
             </div>
 
           </div>
 
-          <div className={"col-md-5 mt-3"}>
+          <div className={"col-md-5 mb-3"}>
 
-          <div className={"card"} id="javascript-card">
+            <div className={"card"} id="javascript-card">
               <div className={"card-header h5"}>
                 Javascript alapképzés (Kezdő)
               </div>
@@ -278,7 +291,7 @@ export default class CoursesList extends React.Component {
                   <span className={'description_title'}>Ár:</span> 19 000 Ft
                 </p>
                 <p className={"sign-up-button"}>
-                  <a href="https://forms.gle/Ysv6K7CMeZXDedBDA" className={"btn btn-success"} target="_blank" rel="noopener noreferrer">Jelentkezési lap</a>
+                  <button className={"btn btn-success"} disabled>Jelentkezési lap</button>
                 </p>
               </div>
             </div>
@@ -286,7 +299,6 @@ export default class CoursesList extends React.Component {
           </div>
           <div className={"col-1"}></div>
         </div>
-
         
       </React.Fragment>
     );
