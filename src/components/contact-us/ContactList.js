@@ -22,7 +22,7 @@ export default class ContactList extends React.Component {
               </p>
               <p>
                 <span className={'description_title'}>Email:</span><br />
-                info@garudaacademy.eu
+                markmanomolnar@gmail.com
               </p>
               <p>
                 <span className={'description_title'}>Facebook:</span><br />
