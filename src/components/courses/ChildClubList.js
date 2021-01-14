@@ -19,8 +19,7 @@ class ChildClubList extends React.Component {
   constructor() {
     super();
     this.state = {
-      playLeft: false,
-      playRight: false
+      playLeft: false
     }
   }
 
@@ -67,7 +66,7 @@ class ChildClubList extends React.Component {
                 <p>
                   <img src={calendar} alt="Szakkör időpontok" className={'box_icon'} />
                   <span className={'description_title'}>Szakkör időpontok:</span>
-                  &nbsp;Minden hétfőn 00:00-tól, Június 15-ig.
+                  &nbsp;Minden hétfőn 16:00-tól, Június 15-ig.
                 </p>
                 <p>
                   <img src={user} alt="Korosztály" className={'box_icon'} />
@@ -122,6 +121,7 @@ class ChildClubList extends React.Component {
                 Python szakkör (haladó)
               </div>
               <div className={"card-body"}>
+                <div className="course-list-img mb-3" id={"list-img-python"}></div>
                 <p>
                   <img src={timer} alt="Időtartam" className={'box_icon'} />
                   <span className={'description_title'}>Időtartam:</span>
@@ -130,7 +130,7 @@ class ChildClubList extends React.Component {
                 <p>
                   <img src={calendar} alt="Szakkör időpontok" className={'box_icon'} />
                   <span className={'description_title'}>Szakkör időpontok:</span>
-                  &nbsp;Minden szerdán 00:00-tól, Június 15-ig.
+                  &nbsp;Minden szerdán 17:00-tól, Június 15-ig.
                 </p>
                 <p>
                   <img src={user} alt="Korosztály" className={'box_icon'} />
@@ -145,7 +145,7 @@ class ChildClubList extends React.Component {
                 <p>
                   <img src={tools} alt="Követelmény" className={'box_icon'} />
                   <span className={'description_title'}>Követelmény:</span>
-                  &nbsp;Számítógép és stabil internet kapcsolat. Olvasás és írástudás szükséges.
+                  &nbsp;Számítógép és stabil internet kapcsolat. Tudásbeli előzetes követelmény nincs.
                 </p>
                 <p>
                   <img src={book} alt="Tematika" className={'box_icon'} />
