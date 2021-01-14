@@ -10,9 +10,15 @@ export default class PrivateLesson extends React.Component {
       <React.Fragment>
         <Menu />
         <Header>
-          <h1 className={"h1 text-white header-background-transparent text-uppercase"}>Privát órák</h1>
+          <h1 className={"h1 text-white header-background-transparent text-uppercase"}>
+            Privát órák
+          </h1>
           <h2 className={"h4 text-white header-background-transparent text-uppercase"}>
-            Extra segítségre van szükséged? Vagy saját ütemben szeretnél tanulni? Esetleg a meghirdetett tanfolyamoktól eltérő technológiát szeretnél kipróbálni? Ne habozz, vedd fel velünk a kapcsolatot!
+            Segítség kell az érettségiben?<br />
+            Vagy egy egyetemi vizsgával vagy elakadva?<br />
+            Esetleg saját tempóban tanulnál?<br /><br />
+
+            Privát órák 5000 ft / órától!
           </h2>
         </Header>
         <PrivateLessonList />
