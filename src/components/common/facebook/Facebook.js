@@ -1,9 +1,9 @@
 import React from 'react';
-import facebook from '../../common/menu/facebook-big.png';
-import messenger from '../../common/menu/messenger-big.png';
-import viber from '../../common/menu/viber-big.png';
-import whatsapp from '../../common/menu/whatsapp-big.png';
-import line from '../../common/menu/line-big.png';
+import facebook from '../../common/menu/facebook-big.webp';
+import messenger from '../../common/menu/messenger-big.webp';
+import viber from '../../common/menu/viber-big.webp';
+import whatsapp from '../../common/menu/whatsapp-big.webp';
+import line from '../../common/menu/line-big.webp';
 
 export default class Facebook extends React.Component {
   render() {

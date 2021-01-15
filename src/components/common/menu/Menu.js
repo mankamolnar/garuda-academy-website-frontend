@@ -1,7 +1,7 @@
 import React from 'react';
 import routes from '../../Routes';
-import logo from './logo.png';
-import hun from './hun.png';
+import logo from './logo.webp';
+import hun from './hun.webp';
 import './menu.css';
 import { Link } from 'react-router-dom';
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import line from '../common/menu/line-big.png';
-import whatsapp from '../common/menu/whatsapp-big.png';
-import viber from '../common/menu/viber-big.png';
-import messenger from '../common/menu/messenger-big.png';
+import line from '../common/menu/line-big.webp';
+import whatsapp from '../common/menu/whatsapp-big.webp';
+import viber from '../common/menu/viber-big.webp';
+import messenger from '../common/menu/messenger-big.webp';
 import './contact.css';
 
 export default class ContactList extends React.Component {

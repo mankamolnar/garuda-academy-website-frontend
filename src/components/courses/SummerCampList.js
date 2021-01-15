@@ -1,11 +1,11 @@
 import React from 'react';
-import timer from '../common/timer.png';
-import user from '../common/user.png';
-import group from '../common/group.png';
-import tools from '../common/tools.png';
-import book from '../common/book.png';
-import price from '../common/price.png';
-import calendar from '../common/calendar.png';
+import timer from '../common/timer.webp';
+import user from '../common/user.webp';
+import group from '../common/group.webp';
+import tools from '../common/tools.webp';
+import book from '../common/book.webp';
+import price from '../common/price.webp';
+import calendar from '../common/calendar.webp';
 import './courses.css';
 
 export default class SummerCampList extends React.Component {
