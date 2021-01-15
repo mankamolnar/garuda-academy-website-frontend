@@ -1,8 +1,8 @@
 import React from 'react';
-import mano from './mano.jpg';
-import ge from './ge.png';
-import ifrc from './ifrc.png';
-import capgemini from './capgemini.png';
+import mano from './mano.webp';
+import ge from './ge.webp';
+import ifrc from './ifrc.webp';
+import capgemini from './capgemini.webp';
 import './teachers.css';
 
 export default class TeacherList extends React.Component {

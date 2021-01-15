@@ -20,3 +20,19 @@
 #video2 {
   background-image: url('../common/images/video-thumbnails/video-2.webp');
 }
+
+@media (min-width: 898px), (max-width: 576px) {
+  .header-buttons-sd {
+    display: none !important;
+  }
+}
+
+@media (min-width: 578px) and (max-width: 897px) {
+  .header-buttons-hd {
+    display: none !important;
+  }
+}
+
+.header-buttons a {
+  width: 100%;
+}

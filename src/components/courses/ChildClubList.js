@@ -2,15 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { chooseCourse } from './../../redux/actions/CourseActions';
 import { openModal } from './../../redux/actions/ModalStateActions';
-import timer from '../common/timer.png';
-import user from '../common/user.png';
-import group from '../common/group.png';
-import tools from '../common/tools.png';
-import book from '../common/book.png';
-import price from '../common/price.png';
-import calendar from '../common/calendar.png';
-import increase from '../common/increase.png';
-import other from '../common/other.png';
+import timer from '../common/timer.webp';
+import user from '../common/user.webp';
+import group from '../common/group.webp';
+import tools from '../common/tools.webp';
+import book from '../common/book.webp';
+import price from '../common/price.webp';
+import calendar from '../common/calendar.webp';
+import increase from '../common/increase.webp';
+import other from '../common/other.webp';
 import './courses.css';
 
 // TODO: export pngs to webp
@@ -19,8 +19,7 @@ class ChildClubList extends React.Component {
   constructor() {
     super();
     this.state = {
-      playLeft: false,
-      playRight: false
+      playLeft: false
     }
   }
 
@@ -67,7 +66,7 @@ class ChildClubList extends React.Component {
                 <p>
                   <img src={calendar} alt="Szakkör időpontok" className={'box_icon'} />
                   <span className={'description_title'}>Szakkör időpontok:</span>
-                  &nbsp;Minden hétfőn 00:00-tól, Június 15-ig.
+                  &nbsp;Minden hétfőn 16:00-tól, Június 15-ig.
                 </p>
                 <p>
                   <img src={user} alt="Korosztály" className={'box_icon'} />
@@ -122,6 +121,7 @@ class ChildClubList extends React.Component {
                 Python szakkör (haladó)
               </div>
               <div className={"card-body"}>
+                <div className="course-list-img mb-3" id={"list-img-python"}></div>
                 <p>
                   <img src={timer} alt="Időtartam" className={'box_icon'} />
                   <span className={'description_title'}>Időtartam:</span>
@@ -130,7 +130,7 @@ class ChildClubList extends React.Component {
                 <p>
                   <img src={calendar} alt="Szakkör időpontok" className={'box_icon'} />
                   <span className={'description_title'}>Szakkör időpontok:</span>
-                  &nbsp;Minden szerdán 00:00-tól, Június 15-ig.
+                  &nbsp;Minden szerdán 17:00-tól, Június 15-ig.
                 </p>
                 <p>
                   <img src={user} alt="Korosztály" className={'box_icon'} />
@@ -145,7 +145,7 @@ class ChildClubList extends React.Component {
                 <p>
                   <img src={tools} alt="Követelmény" className={'box_icon'} />
                   <span className={'description_title'}>Követelmény:</span>
-                  &nbsp;Számítógép és stabil internet kapcsolat. Olvasás és írástudás szükséges.
+                  &nbsp;Számítógép és stabil internet kapcsolat. Tudásbeli előzetes követelmény nincs.
                 </p>
                 <p>
                   <img src={book} alt="Tematika" className={'box_icon'} />
