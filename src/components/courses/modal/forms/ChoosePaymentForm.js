@@ -9,6 +9,7 @@ import bankCardPaymentImg from './img/bank-card-payment.webp';
 import bankTransferPaymentImg from './img/bank-transfer-payment.webp';
 import './css/choose-payment-form.css';
 
+/** TODO: CHANGE INPUT TO NUMBER WHERE ITS POSSIBLE */
 class ChoosePaymentForm extends React.Component {
   constructor() {
     super();

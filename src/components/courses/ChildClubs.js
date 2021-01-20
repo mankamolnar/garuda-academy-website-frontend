@@ -7,6 +7,8 @@ import Footer from '../common/footer/Footer';
 import Facebook from '../common/facebook/Facebook';
 import Modal from './modal/Modal';
 
+// TODO: delete useless connect
+// TODO: delete modalState.opened check
 class ChildClubs extends React.Component {
   render() {
     return (

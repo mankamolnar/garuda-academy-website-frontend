@@ -6,6 +6,11 @@ import SignUpSteps from './forms/constants/SignUpSteps';
 import closeButton from './img/close.webp';
 import './css/modal.css';
 
+// TODO: MAYBE BUGGY WHEN CLOSING, DROP SHOULD BE HANDLED IN COMPONENTWILLUNMOUNT
+// TODO: IT should check the chosenCourseProps and alert you if there is no chosen course
+/**
+ * DOCED
+ */
 class Modal extends React.Component {
   constructor() {
     super();

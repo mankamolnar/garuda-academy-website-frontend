@@ -1,3 +1,4 @@
+// TODO: clean this up
 export default class FormatNumberService {
   addSpacesToNumber = (number) => {
     const stringNumber = number + "";
