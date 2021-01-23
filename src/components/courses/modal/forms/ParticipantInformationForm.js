@@ -121,7 +121,7 @@ class ParticipantForm extends React.Component {
           </label>
           <div className="text-center">
             <input
-              type="text"
+              type="number"
               className="form-control form-date-input float-left"
               id="participant-birthday-field-year"
               placeholder="év (pl: 1992)"
@@ -129,7 +129,7 @@ class ParticipantForm extends React.Component {
                 this.setState({participantBirthdateYear: event.target.value}); }}
               value={this.state.participantBirthdateYear} />
             <input
-              type="text"
+              type="number"
               className="form-control form-date-input"
               id="participant-birtday-field-month"
               placeholder="hó (pl: 10)"
@@ -137,7 +137,7 @@ class ParticipantForm extends React.Component {
                 this.setState({participantBirthdateMonth: event.target.value}); }}
               value={this.state.participantBirthdateMonth} />
             <input
-              type="text"
+              type="number"
               className="form-control form-date-input float-right"
               id="participant-birtday-field-day"
               placeholder="nap (pl: 02)"
