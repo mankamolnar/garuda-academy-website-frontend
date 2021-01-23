@@ -3,14 +3,10 @@ import { connect } from 'react-redux';
 import { dropCreateResponses } from '../../../redux/actions/SignUpActions';
 import { closeModal } from '../../../redux/actions/ModalStateActions';
 import SignUpSteps from './forms/constants/SignUpSteps';
+import ModalErrorMessages from './constants/ModalErrorMessages';
 import closeButton from './img/close.webp';
 import './css/modal.css';
 
-// TODO: MAYBE BUGGY WHEN CLOSING, DROP SHOULD BE HANDLED IN COMPONENTWILLUNMOUNT
-// TODO: IT should check the chosenCourseProps and alert you if there is no chosen course
-/**
- * DOCED
- */
 class Modal extends React.Component {
   constructor() {
     super();
@@ -19,6 +15,14 @@ class Modal extends React.Component {
     };
     this.increaseStep = this.increaseStep.bind(this);
     this.decreaseStep = this.decreaseStep.bind(this);
+  }
+
+  componentDidMount() {
+    const { chosenCourse } = this.props;
+
+    if (!chosenCourse.currency || !chosenCourse.amount || !chosenCourse.name) {
+      console.error(ModalErrorMessages.MODAL_WITHOUT_COURSE);
+    }
   }
 
   increaseStep() {
@@ -77,7 +81,8 @@ class Modal extends React.Component {
 
 const selector = (store) => {
   return {
-    modalState: store.modalState
+    modalState: store.modalState,
+    chosenCourse: store.chosenCourse
   };
 };
 
