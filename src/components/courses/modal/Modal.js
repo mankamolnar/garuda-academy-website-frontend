@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { dropCreateResponses } from '../../../redux/actions/SignUpActions';
 import { closeModal } from '../../../redux/actions/ModalStateActions';
 import SignUpSteps from './forms/constants/SignUpSteps';
+import ModalErrorMessages from './constants/ModalErrorMessages';
 import closeButton from './img/close.webp';
 import './css/modal.css';
 
@@ -14,6 +15,14 @@ class Modal extends React.Component {
     };
     this.increaseStep = this.increaseStep.bind(this);
     this.decreaseStep = this.decreaseStep.bind(this);
+  }
+
+  componentDidMount() {
+    const { chosenCourse } = this.props;
+
+    if (!chosenCourse.currency || !chosenCourse.amount || !chosenCourse.name) {
+      console.error(ModalErrorMessages.MODAL_WITHOUT_COURSE);
+    }
   }
 
   increaseStep() {
@@ -72,7 +81,8 @@ class Modal extends React.Component {
 
 const selector = (store) => {
   return {
-    modalState: store.modalState
+    modalState: store.modalState,
+    chosenCourse: store.chosenCourse
   };
 };
 

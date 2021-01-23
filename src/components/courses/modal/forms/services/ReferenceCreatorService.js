@@ -1,4 +1,4 @@
-export default class ReferenceCreatorService {
+class ReferenceCreatorService {
   generateReference = (sourceString) => {
     sourceString = sourceString.toLowerCase();
     sourceString = this.replaceSpecialLetters(sourceString);
@@ -28,3 +28,11 @@ export default class ReferenceCreatorService {
     return sourceString;
   }
 }
+
+export default () => {
+  let service = new ReferenceCreatorService();
+
+  return {
+    getInstance: () => service
+  };
+};

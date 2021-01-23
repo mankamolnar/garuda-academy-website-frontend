@@ -20,15 +20,15 @@ import './css/payment-form.css';
 class PaymentForm extends React.Component {
   constructor() {
     super();
-    this.confirmCardPaymentDataFactory = new ConfirmCardPaymentDataFactory();
-    this.formatNumberService = new FormatNumberService();
+    this.confirmCardPaymentDataFactory = ConfirmCardPaymentDataFactory.getInstance();
+    this.formatNumberService = FormatNumberService.getInstance();
     this.state = {
       error: undefined,
       loading: false,
       payClickCounter: 0,
       paymentSuccess: false,
       paymentSuccessWithWarning: false
-    }
+    };
   }
 
   componentDidMount() {
@@ -67,7 +67,6 @@ class PaymentForm extends React.Component {
     ).then(this.handleStripeResult);
   };
 
-  //TODO: TEST INVALID EMAILRE
   handleStripeResult = (result) => {
     if (result.paymentIntent !== undefined) {
       if (result.paymentIntent.status === "succeeded") {

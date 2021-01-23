@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import Menu from '../common/menu/Menu';
 import Header from '../common/header/Header';
@@ -23,3 +24,4 @@ export default class Camps extends React.Component {
     );
   }
 }
+*/

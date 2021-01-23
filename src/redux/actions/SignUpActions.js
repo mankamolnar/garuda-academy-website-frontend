@@ -22,7 +22,7 @@ export function addBillingInfo(info) {
 // TODO: all reducers and action types go to constants
 export function createContactInfo(info) {
   const dispatcher_type = "CREATE_CONTACT_INFO";
-  const back4AppHeaderFactory = new Back4AppHeaderFactory();
+  const back4AppHeaderFactory = Back4AppHeaderFactory.getInstance();
 
   return function(dispatch) {
     dispatch({type: dispatcher_type + "_PENDING"});
@@ -42,7 +42,7 @@ export function createContactInfo(info) {
 // TODO: find a better name
 export function createRestApplicationInfo(objectId, info) {
   const dispatcher_type = "CREATE_REST_APPLICATION_INFO";
-  const back4AppHeaderFactory = new Back4AppHeaderFactory();
+  const back4AppHeaderFactory = Back4AppHeaderFactory.getInstance();
 
   return function(dispatch) {
     dispatch({type: dispatcher_type + "_PENDING"});
@@ -61,7 +61,7 @@ export function createRestApplicationInfo(objectId, info) {
 
 export function createPaymentMethod(objectId, info) {
   const dispatcher_type = "CREATE_APPLICATION_PAYMENT_INFO";
-  const back4AppHeaderFactory = new Back4AppHeaderFactory();
+  const back4AppHeaderFactory = Back4AppHeaderFactory.getInstance();
 
   return function(dispatch) {
     dispatch({type: dispatcher_type + "_PENDING"});

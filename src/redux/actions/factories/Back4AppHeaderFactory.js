@@ -1,12 +1,18 @@
-
-// TODO: singleton
-export default class Back4AppHeaderFactory {
+class Back4AppHeaderFactory {
   newHeader() {
     return {
       headers: {
-        "X-Parse-Application-Id": "dlta9qlavwL5jucGZ72a2dGgdPAo0VA2qSTPMmdv",
-        "X-Parse-REST-API-Key": "BMFXuq31UVEtvBSitVLMxVfdEbE4uxWNonYSCjOM"
+        "X-Parse-Application-Id": process.env.REACT_APP_BACK4APP_API_ID,
+        "X-Parse-REST-API-Key": process.env.REACT_APP_BACK4APP_API_KEY
       }
-    }
+    };
   }
 }
+
+export default (() => {
+  let factory = new Back4AppHeaderFactory();
+
+  return {
+    getInstance: () => factory
+  };
+})();

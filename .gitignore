@@ -28,3 +28,7 @@ hs_err_pid*
 # NPM
 package-lock.json
 /build
+
+# ENVIRONMENT VARIABLES
+.env
+.env.production

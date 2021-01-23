@@ -1,5 +1,4 @@
-// TODO: all factories to singleton
-export default class ConfirmCardPaymentDataFactory {
+class ConfirmCardPaymentDataFactory {
   newData(elements, signUpInformation, CardNumberElement) {
     return {
       receipt_email: signUpInformation.contactEmail,
@@ -33,3 +32,11 @@ export default class ConfirmCardPaymentDataFactory {
     };
   }
 }
+
+export default (() => {
+  let factory = new ConfirmCardPaymentDataFactory();
+
+  return {
+    getInstance: () => factory
+  };
+})();

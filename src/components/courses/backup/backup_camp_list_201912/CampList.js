@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import routes from '../Routes';
 import { Link } from 'react-router-dom';
@@ -68,8 +69,6 @@ export default class CampList extends React.Component {
               </div>
               <div className={"card-body"}>
                 <iframe title={"Scratch tábor - 3. nap"} width="100%" height="200" src="https://www.youtube.com/embed/ucDT8c4MyB4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
-                {/*<iframe title="Way of the garuda game" allowTransparency="true" width="100%" height="300" src="https://scratch.mit.edu/projects/123963682/embed" frameBorder="0" scrolling="no" allowFullScreen></iframe>*/}
 
                 <p>
                   <img src={timer} alt="Napi óraszám" className={'box_icon'} />
@@ -171,3 +170,4 @@ export default class CampList extends React.Component {
     );
   }
 }
+*/
