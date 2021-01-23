@@ -1,5 +1,81 @@
 # Garuda Academy Website Frontend
 
+## Setting up environment variables
+
+### Basics
+
+- For `development` environment create `.env`, for `production` environment create `.env.production` file in the root of your application.
+
+- `.env` will be used when you use `npm start` and `.env.production` will be used when you use `npm run build`.
+
+- You must add all the properties from the example! Even if it's an empty string because an unset property becomes `undefined`!
+
+### Example .env file
+```
+REACT_APP_STRIPE_LIVE_KEY=
+REACT_APP_STRIPE_PAYMENT_INTENT_API=
+REACT_APP_STRIPE_PAYMENT_INTENT_API_POSTFIX=
+REACT_APP_BACK4APP_API_KEY=
+REACT_APP_BACK4APP_API_ID=
+```
+
+## Course Card Documentation
+
+### Basics
+
+- All properties are optional, the card is completely modular.
+
+- When you are adding a youtube link, you should add only the ID. Everything else will be filled by the component and itt will be autoplayed by `?autoplay=1` uri ending.
+
+### Neccessary props
+
+1. cardId
+2. title
+3. video (youtubeId, title, thumbnailCssId)
+4. img (cssId)
+5. classLength
+6. classSchedule
+7. ageGroup
+8. groupSize
+9. requirements
+10. thematics
+11. effects
+12. others
+13. price
+14. highlightedInfo
+15. course (name, amount, currency)
+
+### Empty example component with all properties
+
+```
+<CourseCard 
+  cardId=""
+  title=""
+  video={{
+    url: "",
+    title: "",
+    thumbnailCssId: ""
+  }}
+  img={{
+    cssId: ""
+  }}
+  classLength=""
+  classSchedule=""
+  ageGroup=""
+  groupSize=""
+  requirements=""
+  thematics=''
+  effects=''
+  others=""
+  price=""
+  highlightedInfo=""
+  course={{
+    name: "",
+    currency: "",
+    amount: 0
+  }} />
+```
+
 ## Garuda Modal Documentation
 
 ### Basics
@@ -83,7 +159,11 @@ and has a `modal-closer` class.
 
 1. import **Modal.js**
 
-2. place it in your page like `<Modal />`
+2. place it in your page like in the below example. This way you force the modal
+to start from step 1 and check that you did choose course.
+```
+{ this.props.modalState.opened ? <Modal /> : null }
+```
 
 3. Create an event that will trigger the modal to open. This event have to
 contain two action calls:
@@ -96,11 +176,23 @@ handleCourseClick = (course) => {
 
 ## Stripe Payment Documentation
 
-- TODO: fill it
+### Basics
+
+- **PaymentFormContainer.js** is a container that creates a Stripe form with the public key that had been set in environment variables. (todo: add anchor here). This class doesn't contains the actual form with the credit card credentials, only sets the public key and then injecting the form with the card credentials.
+
+- **PaymentForm.js** is the form that contains the credit card credentials. When it gets mounted it is creating a payment intent by our API that contains the secret key. This class's responsibility is to confirm the payment intent, and handling the stripe result. In case of an error response (when the response has an `error` attribute), it will show an alert with the Hungarian translation of the error message. If the error doesn't have a translation it will show the original english one. If you have a success response (response with a `paymentIntent` attribute) it will show only an `alert-success` div that the payment was successful. If for some reason we get back a success response with a status attribute (`response.paymentIntent.status`) that's value is not `succeeded` we send the response to our backend for analysis and show an `alert-warning` that the payment was probably successful but we will get in touch in the next 24 hours.
+
+### Reducers and actions
+
+- **StripePaymentAction.js** contains the function that creates a payment intent with our API (that contains the secret key). It needs a `paymentDetails` object that has to contain a `currency` and an `amount` attribute.
+
+- **PaymentFailureActions.js** contains the function that sends Stripe response for analysis if it has `response.paymentIntent.status` attribute but it's value is not `succeeded`. It sends the application's `objectId` (from back4app) and the full Stripe response.
 
 ## How to use Stripe Payment
 
-- TODO: fill it
+1. Set up environment variables with stripe keys and api urls. (todo: add anchor here)
+
+2. You must have a `chosenCourse` object in store. (todo: add anchor here)
 
 ## Alert messages
 
@@ -139,69 +231,10 @@ a hypen. The passed string will be converted to lower case letters as well.
 9. Images
 10. CSS
 
-## Available Scripts
+## How to run the app:
 
-In the project directory, you can run:
+- set up environment variables
 
-### `npm start`
+- for local development use `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- for deployment use `npm run build`
