@@ -1,5 +1,5 @@
 // TODO: clean this up
-export default class FormatNumberService {
+class FormatNumberService {
   addSpacesToNumber = (number) => {
     const stringNumber = number + "";
 
@@ -25,3 +25,11 @@ export default class FormatNumberService {
     return parseInt(originalNumber) / 100 * percentage;
   }
 }
+
+export default (() => {
+  let service = new FormatNumberService();
+
+  return {
+    getInstance: () => service
+  };
+})();
