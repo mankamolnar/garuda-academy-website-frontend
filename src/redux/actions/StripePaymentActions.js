@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 export function createPaymentIntent(paymentDetails) {
-
-  const HOST = "https://garuda-payment-service.appspot.com";
-  // const HOST = "http://localhost:8080";
+  const api = process.env.REACT_APP_STRIPE_PAYMENT_INTENT_API
+    + "/create-payment-intent"
+    + process.env.REACT_APP_STRIPE_PAYMENT_INTENT_API_POSTFIX;
 
   return function(dispatch) {
     dispatch({type: "PAYMENT_INTENT_PENDING"});
 
-    axios.post(HOST + "/create-payment-intent", paymentDetails)
+    axios.post(api, paymentDetails)
       .then((response) => {
         dispatch({type: "PAYMENT_INTENT_FULFILLED", payload: response.data});
       }).catch((err) => {
