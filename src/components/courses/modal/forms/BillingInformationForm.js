@@ -8,6 +8,7 @@ import {
 import CreateActionsErrorMessages from './constants/CreateActionsErrorMessages';
 import BillingInformationFormErrorMessages
   from './constants/BillingInformationFormErrorMessages';
+import './css/billing-information-form.css';
 
 class BillingInformationForm extends React.Component {
   constructor() {
@@ -157,8 +158,7 @@ class BillingInformationForm extends React.Component {
               placeholder="pl.: 1025"
               onChange={(event) => {
                 this.setState({billingZip: event.target.value}); }}
-              value={this.state.billingZip}
-              style={{width: "35%", display: "inline-block"}} />
+              value={this.state.billingZip} />
             <input
               type="text"
               className="form-control"
@@ -166,8 +166,7 @@ class BillingInformationForm extends React.Component {
               placeholder="pl.: Budapest"
               onChange={(event) => {
                 this.setState({billingCity: event.target.value}); }}
-              value={this.state.billingCity}
-              style={{width: "62%", float: "right"}} />
+              value={this.state.billingCity} />
           </div>
         </div>
 
