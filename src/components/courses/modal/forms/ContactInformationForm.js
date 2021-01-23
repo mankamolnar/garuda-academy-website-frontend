@@ -5,12 +5,14 @@ import {
   addContactInfo,
   createContactInfo
 } from '../../../../redux/actions/SignUpActions';
+import EmailValidatorService from './services/EmailValidatorService';
 import CreateActionsErrorMessages from './constants/CreateActionsErrorMessages';
 import ContactInformationFormErrorMessages from './constants/ContactInformationFormErrorMessages';
 
 class BillingInformationForm extends React.Component {
   constructor() {
     super();
+    this.emailValidatorService = EmailValidatorService.getInstance();
     this.state = {
       showError: false,
       errorMessage: null,
@@ -75,7 +77,7 @@ class BillingInformationForm extends React.Component {
 
       return false;
 
-    } else if (!this.isEmailValidated()) {
+    } else if (!this.emailValidatorService.isEmailStripeValid(this.state.contactEmail)) {
       this.setState({
         showError: true,
         errorMessage: ContactInformationFormErrorMessages.INVALID_EMAIL
@@ -94,37 +96,6 @@ class BillingInformationForm extends React.Component {
 
     return true;
   };
-
-  // TODO: place this into a separate service
-  isEmailValidated = () => {
-    const { contactEmail } = this.state;
-
-    if (contactEmail.indexOf("@") === -1) {
-      return false;
-    }
-
-    const preAt = contactEmail.split("@")[0];
-    const postAt = contactEmail.split("@")[1];
-
-    if (preAt.length === 0) {
-      return false;
-
-    } else if (postAt.indexOf(".") === -1) {
-      return false;
-    }
-
-    const postAtPreDot = postAt.split(".")[0];
-    const postAtPostDot = postAt.split(".")[1];
-
-    if (postAtPreDot.length === 0) {
-      return false;
-
-    } else if (postAtPostDot.length === 0) {
-      return false;
-    }
-
-    return true;
-  }
   
   render() {
     return (
