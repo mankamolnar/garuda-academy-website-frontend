@@ -5,7 +5,7 @@ import Header from '../common/header/Header';
 import ChildClubList from './ChildClubList';
 import Footer from '../common/footer/Footer';
 import Facebook from '../common/facebook/Facebook';
-import PaymentModal from './modal/PaymentModal';
+import PaymentModal from './payment/PaymentModal';
 
 class ChildClubs extends React.Component {
   render() {
