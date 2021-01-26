@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Modal from '../../common/modal/Modal';
 import { dropCreateResponses } from '../../../redux/actions/SignUpActions';
 import { closeModal } from '../../../redux/actions/ModalStateActions';
 import SignUpSteps from './forms/constants/SignUpSteps';
 import ModalErrorMessages from './constants/ModalErrorMessages';
-import closeButton from './img/close.webp';
-import './css/modal.css';
 
-class Modal extends React.Component {
+// TODO: Write documentation about new structure
+class PaymentModal extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -44,38 +44,13 @@ class Modal extends React.Component {
     const CurrentForm = SignUpSteps[this.state.signUpStep].form;
     const modalStyle = this.props.modalState.opened ? "" : "d-none";
     const currentFormTitle = SignUpSteps[this.state.signUpStep].title;
+    const modalTitle = (this.state.signUpStep + 1) + " / " + SignUpSteps.length + " lépés - " + currentFormTitle;
 
-    return (
-      <div
-        className={"bg-dark-transparent garuda-modal " + modalStyle}
-        onClick={this.closeModal}>
-
-        <div className="row modal-row">
-          <div className="col-md-2 modal-closer"></div>
-          <div className="col-md-8 modal-closer">
-
-            <div className="card garuda-card vertical-center modal-card ">
-              <div className="card-header position-relative">
-                <div id="garuda-modal-title">
-                  <h4 className="mb-0">
-                    {this.state.signUpStep + 1} / {SignUpSteps.length} lépés - {currentFormTitle}
-                  </h4>
-                </div>
-                <div id="modal-close-btn-container">
-                  <img src={closeButton} className="modal-close-btn vertical-center modal-closer" alt="close-modal" />
-                </div>
-              </div>
-              <div className="card-body">
-                <CurrentForm nextStep={this.increaseStep} prevStep={this.decreaseStep} />
-              </div>
-            </div>
-
-          </div>
-          <div className="col-md-2 modal-closer"></div>
-        </div>
-
-      </div>
-    );
+    return <Modal
+            closeModal={this.closeModal}
+            modalStyle={modalStyle}
+            title={modalTitle}
+            body={<CurrentForm nextStep={this.increaseStep} prevStep={this.decreaseStep} />} />;
   }
 }
 
@@ -91,4 +66,4 @@ const dispatcher = (dispatch) => ({
   _dropCreateResponses: (...args) => dispatch(dropCreateResponses(...args))
 });
 
-export default connect(selector, dispatcher)(Modal);
+export default connect(selector, dispatcher)(PaymentModal);
