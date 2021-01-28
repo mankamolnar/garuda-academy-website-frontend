@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import VideoButton from './VideoButton';
 import { chooseCourse } from './../../../redux/actions/CourseActions';
 import { openModal } from './../../../redux/actions/ModalStateActions';
 import timer from '../../common/timer.webp';
@@ -49,6 +50,11 @@ class CourseCard extends React.Component {
           {
             this.props.img && !this.props.video
               ? <div className="course-list-img mb-3" id={this.props.img.cssId}></div>
+              : null
+          }
+          {
+            this.props.moreVideos
+              ? <VideoButton videos={this.props.moreVideos} />
               : null
           }
           {
@@ -142,10 +148,10 @@ class CourseCard extends React.Component {
           <p className={"sign-up-button"}>
             {
               this.props.course
-                ? <button className={"btn btn-success"} onClick={() => {
+                ? <button className={"btn btn-lg btn-success"} onClick={() => {
                     this.handleCourseClick(this.props.course);
                   }}>Jelentkezési lap</button>
-                : <button className={"btn btn-success"} disabled>
+                : <button className={"btn btn-lg btn-success"} disabled>
                     Jelentkezési lap
                   </button>
             }
