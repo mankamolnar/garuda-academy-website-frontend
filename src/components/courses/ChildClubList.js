@@ -24,6 +24,7 @@ export default () => (
             title: "Scratch tábor - 14. nap",
             thumbnailCssId: "list-video-scratch"
           }}
+          moreVideos={["Fo6V9zOm0DU", "ijXrphDdW2A", "ZnffgWOwStQ"]}
           classLength="90 perc / alkalom."
           classSchedule="Minden hétfőn 16:00-tól, Június 15-ig."
           ageGroup="9 éves kortól ajánlott."
