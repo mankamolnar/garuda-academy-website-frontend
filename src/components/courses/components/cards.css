@@ -33,6 +33,11 @@
   background-image: url('../../common/images/video-thumbnails/video-1.webp');
 }
 
+#list-video-pygame {
+  background-size: 331px 256px;
+  background-image: url('../../common/images/video-thumbnails/pygame.webp');
+}
+
 #list-img-python {
   background-size: 455px 256px;
   background-image: url('./../img/python-course.webp');
