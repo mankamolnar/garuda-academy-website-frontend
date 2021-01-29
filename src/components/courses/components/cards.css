@@ -7,7 +7,7 @@
 }
 
 .card {
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   height: 100%;
 }
 
@@ -31,6 +31,11 @@
 #list-video-scratch {
   background-size: 331px 256px;
   background-image: url('../../common/images/video-thumbnails/video-1.webp');
+}
+
+#list-video-pygame {
+  background-size: 331px 256px;
+  background-image: url('../../common/images/video-thumbnails/pygame.webp');
 }
 
 #list-img-python {

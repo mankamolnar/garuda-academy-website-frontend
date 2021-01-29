@@ -29,10 +29,10 @@ class ReferenceCreatorService {
   }
 }
 
-export default () => {
+export default (() => {
   let service = new ReferenceCreatorService();
 
   return {
     getInstance: () => service
   };
-};
+})();

@@ -5,7 +5,7 @@ import Header from '../common/header/Header';
 import ChildClubList from './ChildClubList';
 import Footer from '../common/footer/Footer';
 import Facebook from '../common/facebook/Facebook';
-import Modal from './modal/Modal';
+import PaymentModal from './payment/PaymentModal';
 
 class ChildClubs extends React.Component {
   render() {
@@ -24,7 +24,7 @@ class ChildClubs extends React.Component {
         <ChildClubList />
         <Facebook />
         <Footer />
-        { this.props.modalState.opened ? <Modal /> : null }
+        { this.props.modalState.opened ? <PaymentModal /> : null }
       </div>
     );
   }
