@@ -42,3 +42,23 @@
   background-size: 455px 256px;
   background-image: url('./../img/python-course.webp');
 }
+
+#list-img-frontend {
+  background-size: 590px 256px;
+  background-image: url('./../img/frontend-course.png');
+}
+
+#list-img-csharp {
+  background-size: 455px 256px;
+  background-image: url('./../img/csharp.jpg');
+}
+
+#list-img-java {
+  background-size: 516px 256px;
+  background-image: url('./../img/java.webp');
+}
+
+#list-img-sql {
+  background-size: 609px 256px;
+  background-image: url('./../img/sql.webp');
+}
